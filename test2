@@ -8,3 +8,28 @@ route add 10.10.1.0/24 192.168.8.117
 Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.3.9-1.msi -OutFile ${env:tmp}\wazuh-agent-4.3.9.msi; msiexec.exe /i ${env:tmp}\wazuh-agent-4.3.9.msi /q WAZUH_MANAGER='10.10.1.58' WAZUH_REGISTRATION_SERVER='10.10.1.58' WAZUH_AGENT_GROUP='Windows' 
 
 j2Bi*KVGg2fH1r9.Zjy653XEJ0bB0a7i
+
+
+
+1) Загрузите архив KLPaketDumper.zip по ссылке:  https://box.kaspersky.com/f/469be16d4d0b48bdb679/?dl=1
+2) Извлеките архив в отдельную папку (например, C:\klpacketdumper) на устройстве, которое детектирует атаку.
+3) Запустите CMD с правами администратора;
+4) Используя команду cd перейдите в папку, которая соответствует разрядности этой ОС (32 или 64):
+ 
+cd C:\klpacketdumper\out_x64
+ 
+5) Запустите утилиту следующей командой:
+ 
+klpacketdumper.exe -file=traffic.pcap
+ 
+6) Включите трассировки антивируса  https://support.kaspersky.ru/14364. Убедитесь, что компонент "Защита от сетевых атак" включен;
+
+Перезапустите продукт или перезагрузите хост!
+
+7) Дождитесь воспроизведения
+8) Отключите трассировки антивируса;
+9) Закройте окно CMD чтобы остановить работу утилиты.
+ 
+(Вы также можете нажать Ctrl+C чтобы закрыть окно, но на выполнение этой операции может потребоваться около минуты);
+ 
+10) Отправьте мне в архиве полученные трассировки антивируса и файл traffic.pcap расположенный в папке с утилитой klpacketdumper.
