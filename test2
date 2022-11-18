@@ -33,3 +33,11 @@ klpacketdumper.exe -file=traffic.pcap
 (Вы также можете нажать Ctrl+C чтобы закрыть окно, но на выполнение этой операции может потребоваться около минуты);
  
 10) Отправьте мне в архиве полученные трассировки антивируса и файл traffic.pcap расположенный в папке с утилитой klpacketdumper.
+
+
+
+$ProgressPreference = 'SilentlyContinue'
+Invoke-WebRequest -Uri https://artifacts.elastic.co/downloads/beats/elastic-agent/elastic-agent-8.5.1-windows-x86_64.zip -OutFile elastic-agent-8.5.1-windows-x86_64.zip
+Expand-Archive .\elastic-agent-8.5.1-windows-x86_64.zip -DestinationPath .
+cd elastic-agent-8.5.1-windows-x86_64
+.\elastic-agent.exe install --url=https://de-logmgm2.fxtm:8220 --enrollment-token=SFdVRWk0UUI3aGpkMktPQzJYN3U6RmREOEd0OFFSR1NHdm5KZGFCT3NNUQ==
