@@ -1,0 +1,6 @@
+Invoke-WebRequest -Uri https://packages.wazuh.com/4.x/windows/wazuh-agent-4.3.9-1.msi -OutFile ${env:tmp}\wazuh-agent-4.3.9.msi; msiexec.exe /i ${env:tmp}\wazuh-agent-4.3.9.msi /q WAZUH_MANAGER='10.10.1.55' WAZUH_REGISTRATION_SERVER='10.10.1.55' WAZUH_REGISTRATION_PASSWORD='Ambient123' WAZUH_AGENT_GROUP='Windows' 
+
+
+
+
+NET START WazuhSvc
