@@ -1,0 +1,12 @@
+Zip the file with password
+Move to remnux
+run "olevba name.doc" this will show autoexecs and macros in the file 
+Upload this file to Hybrid Analysis and see the embedded commands (find cmd EMCPD [coded] if the command ends with = this means it is a base64)
+to decode base64 copy [coded] and run "echo [coded] | base64 -d" 
+if it is obfuscated try spoting indicators if its a powershell command etc. 
+in case it is run on isolated VM the obfuscated code in powershell ISE (take snapshot of the clean VM before running)
+Get-Veriable to see the veriables
+see the result
+try running Get-Veriable -name (recomendation) | fl
+see for any links
+check if the link was followed by any user 
