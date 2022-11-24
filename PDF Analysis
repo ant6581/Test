@@ -1,0 +1,4 @@
+Zip with password
+move to remnux VM
+before opening look for embedded links in the file. To do so "strings name.pdf | grep http" this will show the link 
+Upload to AnyRun the file
